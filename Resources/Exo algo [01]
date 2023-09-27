@@ -1,0 +1,621 @@
+### Exercice 1 : Calcul de la somme des entiers de 1 à n
+
+Écrivez un algorithme qui calcule la somme des entiers de 1 à n, où n est un entier saisi par l'utilisateur. Par exemple, si l'utilisateur entre n = 5, l'algorithme doit calculer la somme 1 + 2 + 3 + 4 + 5 et afficher le résultat.
+
+### Exercice 2 : Vérification de la parité
+
+Écrivez un algorithme qui vérifie si un nombre entier donné par l'utilisateur est pair ou impair. Affichez un message approprié en fonction du résultat.
+
+### Exercice 3 : Calcul du factoriel
+
+Écrivez un algorithme pour calculer le factoriel d'un nombre entier positif n donné par l'utilisateur. Le factoriel de n, noté n!, est le produit de tous les entiers de 1 à n. Par exemple, 5! = 5 * 4 * 3 * 2 * 1 = 120.
+
+### Exercice 4 : Conversion de température
+
+Écrivez un algorithme qui convertit une température donnée en degrés Celsius en degrés Fahrenheit. La formule de conversion est : Fahrenheit = (Celsius * 9/5) + 32.
+
+### Exercice 5 : Recherche d'un élément dans une liste
+
+Écrivez un algorithme qui recherche la présence d'un élément donné dans une liste d'entiers. Demandez à l'utilisateur de saisir la valeur à rechercher, puis indiquez si elle se trouve dans la liste ou non.
+
+### Exercice 6 : Calcul de la moyenne
+
+Écrivez un algorithme qui calcule la moyenne de plusieurs nombres réels saisis par l'utilisateur. L'algorithme doit continuer à demander des nombres jusqu'à ce que l'utilisateur décide d'arrêter la saisie, puis il affiche la moyenne.
+
+### Exercice 7 : Tri de nombres
+
+Écrivez un algorithme qui trie un tableau de nombres entiers dans l'ordre croissant en utilisant l'algorithme de tri à bulles. Affichez le tableau trié.
+
+
+##################################################
+Resolution en algo
+##################################################
+### Exercice 1 : Calcul de la somme des entiers de 1 à n
+
+```plaintext
+Début
+    Afficher "Entrez un entier n :"
+    Saisir n
+    somme <- 0
+
+    Pour i allant de 1 à n faire
+        somme <- somme + i
+    Fin Pour
+
+    Afficher "La somme des entiers de 1 à n est : ", somme
+Fin
+```
+##################################################
+### Exercice 2 : Vérification de la parité
+
+```plaintext
+Début
+    Afficher "Entrez un nombre entier :"
+    Saisir nombre
+
+    Si (nombre % 2) est égal à 0 alors
+        Afficher "Le nombre est pair."
+    Sinon
+        Afficher "Le nombre est impair."
+    Fin Si
+Fin
+```
+##################################################
+### Exercice 3 : Calcul du factoriel
+
+```plaintext
+Début
+    Afficher "Entrez un entier positif n :"
+    Saisir n
+    factoriel <- 1
+
+    Pour i allant de 1 à n faire
+        factoriel <- factoriel * i
+    Fin Pour
+
+    Afficher "Le factoriel de ", n, " est : ", factoriel
+Fin
+```
+##################################################
+### Exercice 4 : Conversion de température
+
+```plaintext
+Début
+    Afficher "Entrez la température en degrés Celsius :"
+    Saisir celsius
+    fahrenheit <- (celsius * 9/5) + 32
+
+    Afficher "La température en degrés Fahrenheit est : ", fahrenheit
+Fin
+```
+##################################################
+### Exercice 5 : Recherche d'un élément dans une liste
+
+```plaintext
+Début
+    Afficher "Entrez le nombre à rechercher :"
+    Saisir recherche
+    trouvé <- faux
+
+    Pour chaque élément dans la liste faire
+        Si élément est égal à recherche alors
+            trouvé <- vrai
+            Sortir de la boucle
+        Fin Si
+    Fin Pour
+
+    Si trouvé est vrai alors
+        Afficher "Le nombre a été trouvé dans la liste."
+    Sinon
+        Afficher "Le nombre n'a pas été trouvé dans la liste."
+    Fin Si
+Fin
+```
+##################################################
+### Exercice 6 : Calcul de la moyenne
+
+```plaintext
+Début
+    somme <- 0
+    compteur <- 0
+
+    Répéter
+        Afficher "Entrez un nombre (ou -1 pour terminer) :"
+        Saisir nombre
+
+        Si nombre n'est pas égal à -1 alors
+            somme <- somme + nombre
+            compteur <- compteur + 1
+        Fin Si
+
+    Jusqu'à ce que nombre soit égal à -1
+
+    Si compteur est supérieur à 0 alors
+        moyenne <- somme / compteur
+        Afficher "La moyenne des nombres saisis est : ", moyenne
+    Sinon
+        Afficher "Aucun nombre n'a été saisi."
+    Fin Si
+Fin
+```
+##################################################
+### Exercice 7 : Tri de nombres (Tri à bulles)
+
+```Plaintext
+Début
+    Afficher "Entrez le nombre d'éléments dans le tableau :"
+    Saisir n
+    Déclarer tableau[n]
+
+    Afficher "Entrez les éléments du tableau :"
+    Pour i allant de 1 à n faire
+        Saisir tableau[i]
+    Fin Pour
+
+    Pour i allant de 1 à n - 1 faire
+        Pour j allant de 1 à n - i faire
+            Si tableau[j] > tableau[j+1] alors
+                Échanger tableau[j] et tableau[j+1]
+            Fin Si
+        Fin Pour
+    Fin Pour
+
+    Afficher "Le tableau trié est :"
+    Pour i allant de 1 à n faire
+        Afficher tableau[i]
+    Fin Pour
+Fin
+```
+
+
+##################################################
+Resolution en c
+##################################################
+
+##################################################
+### Exercice 1 : Calcul de la somme des entiers de 1 à n
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, somme = 0;
+    
+    printf("Entrez un entier n : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        somme += i;
+    }
+
+    printf("La somme des entiers de 1 à %d est : %d\n", n, somme);
+
+    return 0;
+}
+```
+##################################################
+### Exercice 2 : Vérification de la parité
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nombre;
+    
+    printf("Entrez un nombre entier : ");
+    scanf("%d", &nombre);
+
+    if (nombre % 2 == 0) {
+        printf("Le nombre est pair.\n");
+    } else {
+        printf("Le nombre est impair.\n");
+    }
+
+    return 0;
+}
+```
+##################################################
+### Exercice 3 : Calcul du factoriel
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, factoriel = 1;
+    
+    printf("Entrez un entier positif n : ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        factoriel *= i;
+    }
+
+    printf("Le factoriel de %d est : %d\n", n, factoriel);
+
+    return 0;
+}
+```
+##################################################
+### Exercice 4 : Conversion de température
+
+```c
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+    
+    printf("Entrez la température en degrés Celsius : ");
+    scanf("%f", &celsius);
+
+    fahrenheit = (celsius * 9/5) + 32;
+
+    printf("La température en degrés Fahrenheit est : %.2f\n", fahrenheit);
+
+    return 0;
+}
+```
+##################################################
+### Exercice 5 : Recherche d'un élément dans une liste
+
+```c
+#include <stdio.h>
+
+int main() {
+    int recherche, trouvé = 0;
+    int liste[] = {5, 10, 15, 20, 25}; // Exemple de liste
+    
+    printf("Entrez le nombre à rechercher : ");
+    scanf("%d", &recherche);
+
+    for (int i = 0; i < 5; i++) { // Remplacez 5 par la taille de votre liste
+        if (liste[i] == recherche) {
+            trouvé = 1;
+            break;
+        }
+    }
+
+    if (trouvé) {
+        printf("Le nombre a été trouvé dans la liste.\n");
+    } else {
+        printf("Le nombre n'a pas été trouvé dans la liste.\n");
+    }
+
+    return 0;
+}
+```
+##################################################
+### Exercice 6 : Calcul de la moyenne
+
+```c
+#include <stdio.h>
+
+int main() {
+    int somme = 0, compteur = 0;
+    float nombre, moyenne;
+
+    do {
+        printf("Entrez un nombre (ou -1 pour terminer) : ");
+        scanf("%f", &nombre);
+
+        if (nombre != -1) {
+            somme += nombre;
+            compteur++;
+        }
+    } while (nombre != -1);
+
+    if (compteur > 0) {
+        moyenne = somme / compteur;
+        printf("La moyenne des nombres saisis est : %.2f\n", moyenne);
+    } else {
+        printf("Aucun nombre n'a été saisi.\n");
+    }
+
+    return 0;
+}
+```
+##################################################
+### Exercice 7 : Tri de nombres (Tri à bulles)
+
+```c
+#include <stdio.h>
+
+void triBulles(int tableau[], int n) {
+    int temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (tableau[j] > tableau[j + 1]) {
+                // Échanger les éléments
+                temp = tableau[j];
+                tableau[j] = tableau[j + 1];
+                tableau[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Entrez le nombre d'éléments dans le tableau : ");
+    scanf("%d", &n);
+
+    int tableau[n];
+
+    printf("Entrez les éléments du tableau : ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &tableau[i]);
+    }
+
+    triBulles(tableau, n);
+
+    printf("Le tableau trié est : ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", tableau[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+#########################
+#########################
+#########################
+
+### Exercice : Calcul de la racine carrée
+
+Écrivez un algorithme pour calculer la racine carrée d'un nombre donné par l'utilisateur en utilisant la méthode de la recherche par dichotomie.
+
+#### Résolution en pseudocode :
+
+```plaintext
+Début
+    Afficher "Entrez un nombre pour lequel vous voulez calculer la racine carrée :"
+    Saisir nombre
+
+    Si nombre < 0 alors
+        Afficher "Impossible de calculer la racine carrée d'un nombre négatif."
+    Sinon
+        précision <- 0.00001
+        gauche <- 0.0
+        droite <- nombre
+        racine <- (gauche + droite) / 2.0
+
+        Tant que (droite - gauche) > précision faire
+            racine <- (gauche + droite) / 2.0
+
+            Si racine * racine > nombre alors
+                droite <- racine
+            Sinon
+                gauche <- racine
+            Fin Si
+        Fin Tant Que
+
+        Afficher "La racine carrée de ", nombre, " est environ : ", racine
+    Fin Si
+Fin
+```
+
+#### Résolution en langage C :
+
+```c
+#include <stdio.h>
+
+int main() {
+    double nombre, precision = 0.00001, gauche = 0.0, droite, racine;
+
+    printf("Entrez un nombre pour lequel vous voulez calculer la racine carrée : ");
+    scanf("%lf", &nombre);
+
+    if (nombre < 0) {
+        printf("Impossible de calculer la racine carrée d'un nombre négatif.\n");
+    } else {
+        droite = nombre;
+        racine = (gauche + droite) / 2.0;
+
+        while ((droite - gauche) > precision) {
+            racine = (gauche + droite) / 2.0;
+
+            if (racine * racine > nombre) {
+                droite = racine;
+            } else {
+                gauche = racine;
+            }
+        }
+
+        printf("La racine carrée de %.2lf est environ : %.5lf\n", nombre, racine);
+    }
+
+    return 0;
+}
+```
+
+#################################################################################################################
+
+voici un exercice en C qui vous demande de créer un système pour calculer le salaire de chaque salarié dans une entreprise en fonction de leur statut (permanent ou contractuel). Le salaire pour les permanents est basé sur un salaire mensuel fixe, tandis que le salaire pour les contractuels est basé sur le nombre d'heures travaillées et le taux horaire.
+
+#### Exercice :
+
+Écrivez un programme en C qui calcule le salaire de chaque salarié dans une entreprise en fonction de son statut. Le programme doit :
+
+1. Demander à l'utilisateur de saisir le nombre total de salariés.
+
+2. Pour chaque salarié, demander à l'utilisateur de saisir les informations suivantes :
+   - Le nom du salarié.
+   - Le statut du salarié (permanent ou contractuel).
+   - Si le statut est permanent, demander le salaire mensuel fixe.
+   - Si le statut est contractuel, demander le nombre d'heures travaillées et le taux horaire.
+
+3. Calculer le salaire de chaque salarié en fonction de son statut et afficher le nom du salarié et son salaire.
+
+4. À la fin, afficher le salaire total payé à tous les salariés.
+
+5. Assurez-vous de gérer correctement les différentes conditions pour le calcul des salaires en fonction du statut.
+
+#### Résolution en C :
+
+Voici un exemple de résolution en C de cet exercice :
+
+```c
+#include <stdio.h>
+
+int main() {
+    int nombreSalaries;
+    double salaireTotal = 0.0;
+
+    printf("Entrez le nombre total de salariés : ");
+    scanf("%d", &nombreSalaries);
+
+    for (int i = 1; i <= nombreSalaries; i++) {
+        char nom[50];
+        char statut[20];
+        double salaire = 0.0;
+
+        printf("\nSaisie pour le salarié #%d\n", i);
+        printf("Nom du salarié : ");
+        scanf("%s", nom);
+        printf("Statut (permanent ou contractuel) : ");
+        scanf("%s", statut);
+
+        if (strcmp(statut, "permanent") == 0) {
+            // Salarié permanent
+            printf("Salaire mensuel fixe : ");
+            scanf("%lf", &salaire);
+        } else if (strcmp(statut, "contractuel") == 0) {
+            // Salarié contractuel
+            int heuresTravaillees;
+            double tauxHoraire;
+
+            printf("Nombre d'heures travaillées : ");
+            scanf("%d", &heuresTravaillees);
+            printf("Taux horaire : ");
+            scanf("%lf", &tauxHoraire);
+
+            salaire = heuresTravaillees * tauxHoraire;
+        } else {
+            printf("Statut invalide. Veuillez entrer 'permanent' ou 'contractuel'.\n");
+            i--; // Répéter la saisie pour le même salarié.
+            continue;
+        }
+
+        printf("Le salaire de %s est de : %.2lf\n", nom, salaire);
+        salaireTotal += salaire;
+    }
+
+    printf("\nLe salaire total payé à tous les salariés est de : %.2lf\n", salaireTotal);
+
+    return 0;
+}
+```
+
+Ce programme permet à l'utilisateur de saisir les informations pour chaque salarié, calcule le salaire en fonction du statut, et affiche les résultats pour chaque salarié ainsi que le salaire total payé à tous les salariés.
+
+
+####################################################################################################################
+
+Bien sûr, voici un exercice en C qui demande aux utilisateurs de saisir des informations sur les employés d'une entreprise, de gérer plusieurs types d'employés (permanent, contractuel et à temps partiel), de calculer leurs salaires respectifs avec l'application de bonus en pourcentage, et de générer un rapport complet à la fin.
+
+#### Exercice :
+
+Écrivez un programme en C pour gérer les informations sur les employés d'une entreprise, y compris l'application de bonus en pourcentage sur leur salaire. Le programme doit :
+
+1. Demander à l'utilisateur de saisir le nombre total d'employés.
+
+2. Pour chaque employé, demandez à l'utilisateur de saisir les informations suivantes :
+   - Le nom de l'employé.
+   - Le type d'employé (permanent, contractuel ou à temps partiel).
+   - En fonction du type d'employé :
+     - Pour les permanents, demandez le salaire mensuel fixe et le pourcentage de bonus.
+     - Pour les contractuels, demandez le nombre d'heures travaillées, le taux horaire et le pourcentage de bonus.
+     - Pour les employés à temps partiel, demandez le nombre d'heures travaillées, le taux horaire et le pourcentage de bonus.
+
+3. Calculez le salaire de chaque employé en fonction de son type et appliquez le bonus en pourcentage, puis affichez le nom de l'employé et son salaire total.
+
+4. Calculez et affichez le salaire total payé à tous les employés, y compris les bonus.
+
+5. Générez un rapport qui récapitule les informations sur chaque employé, y compris le nom, le type, le salaire de base, le bonus et le salaire total.
+
+6. Assurez-vous de gérer correctement les différentes conditions pour le calcul des salaires et l'application des bonus en pourcentage en fonction du type d'employé.
+
+#### Résolution en C :
+
+Voici un exemple de résolution en C de cet exercice :
+
+```c
+
+#include <stdio.h>
+#include <string.h>
+
+struct Employe {
+    char nom[50];
+    char type[20];
+    double salaire;
+    double bonus;
+};
+
+int main() {
+    int nombreEmployes;
+    double salaireTotal = 0.0;
+
+    printf("Entrez le nombre total d'employés : ");
+    scanf("%d", &nombreEmployes);
+
+    struct Employe employes[nombreEmployes];
+
+    for (int i = 0; i < nombreEmployes; i++) {
+        printf("\nSaisie pour l'employé #%d\n", i + 1);
+        printf("Nom de l'employé : ");
+        scanf("%s", employes[i].nom);
+        printf("Type d'employé (permanent, contractuel ou partiel) : ");
+        scanf("%s", employes[i].type);
+
+        if (strcmp(employes[i].type, "permanent") == 0) {
+            printf("Salaire mensuel fixe : ");
+            scanf("%lf", &employes[i].salaire);
+        } else if (strcmp(employes[i].type, "contractuel") == 0) {
+            int heuresTravaillees;
+            double tauxHoraire;
+            printf("Nombre d'heures travaillées : ");
+            scanf("%d", &heuresTravaillees);
+            printf("Taux horaire : ");
+            scanf("%lf", &tauxHoraire);
+            employes[i].salaire = heuresTravaillees * tauxHoraire;
+        } else if (strcmp(employes[i].type, "partiel") == 0) {
+            int heuresTravaillees;
+            double tauxHoraire;
+            printf("Nombre d'heures travaillées : ");
+            scanf("%d", &heuresTravaillees);
+            printf("Taux horaire : ");
+            scanf("%lf", &tauxHoraire);
+            employes[i].salaire = heuresTravaillees * tauxHoraire;
+        } else {
+            printf("Type d'employé invalide. Veuillez entrer 'permanent', 'contractuel' ou 'partiel'.\n");
+            i--; // Répéter la saisie pour le même employé.
+            continue;
+        }
+
+        // Appliquer le bonus en pourcentage en fonction du type d'employé
+        if (strcmp(employes[i].type, "permanent") == 0) {
+            employes[i].bonus = 2.0;
+        } else if (strcmp(employes[i].type, "contractuel") == 0) {
+            employes[i].bonus = 4.0;
+        } else if (strcmp(employes[i].type, "partiel") == 0) {
+            employes[i].bonus = 8.0;
+        }
+
+        // Appliquer le bonus en pourcentage au salaire
+        employes[i].salaire += (employes[i].salaire * employes[i].bonus) / 100.0;
+        salaireTotal += employes[i].salaire;
+    }
+
+    printf("\nSalaire total payé à tous les employés (y compris les bonus) : %.2lf\n", salaireTotal);
+
+    printf("\nRapport des employés :\n");
+    for (int i = 0; i < nombreEmployes; i++) {
+        printf("Nom : %s, Type : %s, Salaire de base : %.2lf, Bonus (%.2lf%%) : %.2lf, Salaire total : %.2lf\n",
+               employes[i].nom, employes[i].type, employes[i].salaire / (1 + (employes[i].bonus / 100)),
+               employes[i].bonus, (employes[i].salaire - (employes[i].salaire / (1 + (employes[i].bonus / 100)))),
+               employes[i].salaire);
+    }
+
+    return 0;
+}
